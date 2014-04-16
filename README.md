@@ -13,6 +13,6 @@ In the availabilitytest.html file the availibilityAPI property is currently set 
    
 Which is the TEST Registry service as documented here:
 
-  URL
+  http://docs.respectnetwork.net/wiki/CloudName_CheckAvailability_Service
   
 The production endpoint will be forthcoming soon.
