@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Check Availability</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+	<link rel="stylesheet" id="bootstrap-css" href="http://ronrichardsonwebdesign.com/respectnetwork.com/wp-content/themes/quare/css/bootstrap.css?ver=3.5" type="text/css" media="all">
+	
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,300italic" rel="stylesheet" type="text/css">
+	
+	
+	
+	<!--include jquery-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+	
+	<!--include local styling-->
+	<link href="RNMocks.CSS" rel="stylesheet" type="text/css">
+	
+	
+	
+	<!--include the javascript that checks availability-->
+	<script src="..\js\nameavailability.js"></script>
+	
+
+	
+</head>
+<body  >
+
+	<!--Standard Respect Network header with no functional significance-->
+	<div class='RNHead'>
+		<div class='grid'>
+		  <div class='logo'><img src='RNLogo.png' /></div>
+			<div style='text-align:right;'>
+			<div class='Press' >Press|FAQ</div>
+			</div>
+			
+		</div>
+
+	</div>
+	
+	
+	<!--The main content area-->
+	<div class='RNBody'>
+	
+		<!--these are the elements that are going to be passed into the javascript-->
+		<div class='namecheck' >
+			Choose your cloud name<br>
+			 <input name="cloudname" type="text" id="cloudname" placeholder="=you…"/><br>
+				<span class='error'  name="isAvailable" id="isAvailable"></span>
+		</div>
+	
+		
+	</div>
+
+
+	<!--The following script hooks the HTML Elements to the javascript functionality-->
+	<!-- see the comments inside the javascript for details-->
+ <script>
+ 
+ $(document).ready(function () {
+ 
+ 		// the value of this var is the id of the input element 
+ 		// that the user is typing into
+ 		var cloudnameField = "#cloudname";
+ 
+	 	// the value of this var is the id of the display element 
+ 		// that will be used to convey information to the user
+ 		var messageSpan = "#isAvailable";
+ 
+ 		
+	    $(cloudnameField).checkCloud({
+	        completed: function(elem, success) {
+	        	
+	        	// success var will contain a 1 if the name is available
+	        	// and 0 if it not available.
+	        	
+	        	console.log('Checking cloud...');
+	            console.log(success);
+	        	
+	        	if(success==1)
+	        	{
+	        		// Make whatever changes to the UI to indicate that the name is
+	        		// available
+	        		$(messageSpan).html("Name is available");
+	        		$(messageSpan).css('color', 'green');
+	        		 		      		
+	        	}else{
+	        	
+	        		// Make whatever changes to the UI to indicate that the name is
+	        		// unavailable
+	        		$(messageSpan).html("Name is NOT available");	        		
+	        		$(messageSpan).css('color', 'red');	
+	        		      		
+	        	}
+	        	
+	            
+	        },
+	        changed: function(elem) {
+				//Called when user is typing
+	            console.log('Changing cloud...');
+	        },
+	        // indicates if the leading symbol should be removed prior to adding the 
+	        // name to the path
+	        stripSymbol:true, 
+	        
+	        // indicates the location of the availability service
+	        availibilityAPI: "http://cloudnameavailability.elasticbeanstalk.com/api/availability/equals/"
+	    }); 
+	});
+ 
+ 
+ </script>
+
+</body>
+</html>

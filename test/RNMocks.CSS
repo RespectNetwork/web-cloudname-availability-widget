@@ -1,0 +1,96 @@
+
+body
+{
+	padding: 0px;
+	margin: 0px;
+	font-family:Open Sans;
+	color: #999a9b;
+}
+
+
+.RNHead
+{
+	width: 100%;
+	height: 90px;
+	background-color: #fdfdfd;
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1px #b6b6b6 solid;
+}
+
+.RNBody
+{
+	width: 100%;
+	height: 1000px;
+	background-color: #efefef;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+.csppicker
+{
+	width:400px;
+	text-align: center;
+	position: relative;
+	top:105px;
+	border: 2px;
+	border-style: solid;
+		margin: 0 auto;
+	
+}
+
+.namecheck
+{
+	text-align: center;
+	position: relative;
+	top:55px;
+}
+
+.Rcheckbox
+{
+	font-size: 10pt;
+}
+
+.error
+{
+
+	color: red;
+}
+
+.grid
+{
+
+	max-width: 960px;
+
+	height:100%;
+	margin: 0 auto;
+
+}
+
+.grid2
+{
+
+	max-width: 660px;
+	position: relative;
+	top:110px;
+	height:100%;
+	margin: 0 auto;
+
+}
+
+.logo
+{
+  	display: inline-block;
+  	position: relative;
+  	top:10px;
+}
+
+.Press
+{
+	display: inline-block;
+	position: relative;
+	right:0px;
+	top:-10px;
+	width:80px;
+}
