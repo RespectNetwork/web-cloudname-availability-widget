@@ -86,7 +86,9 @@
        $elem.keyup(checkCloudName);
        
        // Check cloud names without any delay on blur
-       $elem.blur(checkCloudName(event, 0));
+        $elem.blur( function(event) {
+            checkCloudName(event, 0));
+        });
        
        // Change cloud name on keypress
        $elem.keypress(cloudNameChanged);
